@@ -1,0 +1,25 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+
+public class task01_sem02 {
+
+    public static void main(String[] args) {
+    
+        inputFloat();
+
+    }
+   // Метод ввода дробного числа + предупреждение о неправильном вводе
+static float inputFloat() {
+try (Scanner sc = new Scanner(System.in)) {
+    System.out.println("Введите дробное число (типа float): ");       
+       float inputnum = sc.nextFloat();
+       System.out.println("Отлично число " +inputnum+ " принято"); 
+       return inputnum;
+      
+    } catch (InputMismatchException e) {
+        System.out.println("Это не дробное число, повторите ввод");
+        return inputFloat();
+     }
+    }
+}
