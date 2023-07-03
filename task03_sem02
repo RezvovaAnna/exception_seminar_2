@@ -1,0 +1,27 @@
+class task03_sem02 {
+
+public static void main(String[] args) throws Exception {
+    try {
+        int a = 90;
+        int b = 3;
+        System.out.println(a / b);
+        printSum(23, 234);
+        int[] abc = { 1, 2 };
+        abc[3] = 9;
+    } catch (NullPointerException ex) {
+        System.out.println("Указатель не может указывать на null!");
+        //На всякий случай, если захочется поделить на ноль
+    } catch (ArithmeticException ex) {
+        System.out.println("Деление на ноль!");
+    } catch (ArrayIndexOutOfBoundsException ex) {
+        System.out.println("Массив выходит за пределы своего размера!");
+        // Ловим все прочие ошибки в конце
+    } catch (Exception ex) {
+        System.out.println("Что-то пошло не так...");
+    }
+ }
+ // FileNotFoundException подразумевает, что данные считываются из файла, но здесь они просто задаются изначально
+ public static void printSum(Integer a, Integer b) {
+    System.out.println(a + b);
+}
+}
