@@ -1,0 +1,28 @@
+public class task02_sem02 {
+
+
+
+    public static void main(String[] args) {
+        int d = 0;
+        //инициализация массива intArray
+        int[] intArray = new int[8];
+        // инициализация catchedRes1
+        double catchedRes1 = 0;
+       
+    try {
+        catchedRes1 = (double) intArray[8] / d; 
+        System.out.println("catchedRes1 = " + catchedRes1);
+        // В типе double можно разделить на ноль и получить Infinite 
+        if (Double.isNaN(catchedRes1) || Double.isInfinite(catchedRes1)){
+            throw new RuntimeException("Результат деления бесконечность");
+          }
+        // На случай выхода за пределы массива
+     } catch (ArrayIndexOutOfBoundsException e) {
+        System.out.println("Индекс за пределами массива: " + e);
+      //На случай если поделил на ноль
+     } catch (ArithmeticException e) {
+        System.out.println("Ошибка: " + e);
+     }
+     
+}
+}
