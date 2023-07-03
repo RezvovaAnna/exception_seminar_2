@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class task04_sem02 {
+
+    public static void main(String[] args) {
+    
+        inputData();
+
+    }
+
+   
+static String inputData() {
+   try { Scanner sc = new Scanner(System.in);
+    System.out.println("Введите данные: ");       
+       String res = sc.nextLine();
+    if(res.isEmpty()){
+    sc.close();
+    throw new IllegalArgumentException("Пустые строки вводить нельзя!");
+    }
+  else { 
+    System.out.println("Данные " +res+ " приняты");
+    sc.close();
+    return res;
+}
+} finally {
+    System.out.println("Обработка завершена");
+}
+}
+}
